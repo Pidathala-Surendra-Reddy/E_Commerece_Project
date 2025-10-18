@@ -7,6 +7,35 @@
  - Write reviews and manage wishlists
 • Admins can manage products, categories, inventory, and monitor user activities. The project is designed with JWT-based authentication, secure endpoints, and a scalable relational database schema.
 
+# Project Structure:
+```
+e-commerce/
+│
+├─ app/
+│  ├─ main.py              # FastAPI app initialization
+│  ├─ models.py            # SQLAlchemy models
+│  ├─ database.py          # PostgreSQL connection & session
+│  ├─ auth_utils.py        # JWT token creation & password hashing
+│  ├─ dependencies.py      # Current user/admin dependency
+│  ├─ schemas.py           # Request & Response validation
+│  └─ routers/             # API endpoints per entity
+│      ├─ userpy
+│      ├─ admin.py
+│      ├─ products.py
+│      ├─ categories.py
+│      ├─ inventory.py
+│      ├─ cart.py
+│      ├─ orders.py
+│      ├─ payments.py
+│      ├─ shipping.py
+│      ├─ reviews.py
+│      ├─ coupons.py
+│      └─ wishlist.py
+├─ .env                    # Environment variables
+├─ requirements.txt        # Python dependencies
+└─ README.md
+```
+
 # 🔗 ER Diagram
 
 The following diagram represents the entities and relationships in the e-commerce project:
@@ -66,36 +95,4 @@ The main goals of this project are:
 - Password Security: bcrypt (via Passlib)
 - Environment Management: python-dotenv
 - Documentation: Swagger UI (auto-generated)
-
-# Project Structure:
-```
-
-e-commerce/
-│
-├─ app/
-│  ├─ main.py              # FastAPI app initialization
-│  ├─ models.py            # SQLAlchemy models
-│  ├─ database.py          # PostgreSQL connection & session
-│  ├─ auth_utils.py        # JWT token creation & password hashing
-│  ├─ dependencies.py      # Current user/admin dependency
-│  ├─ schemas.py           # Request & Response validation
-│  └─ routers/             # API endpoints per entity
-│      ├─ users.py
-│      ├─ admin.py
-│      ├─ products.py
-│      ├─ categories.py
-│      ├─ inventory.py
-│      ├─ cart.py
-│      ├─ orders.py
-│      ├─ payments.py
-│      ├─ shipping.py
-│      ├─ reviews.py
-│      ├─ coupons.py
-│      └─ wishlist.py
-├─ .env                    # Environment variables
-├─ requirements.txt        # Python dependencies
-└─ README.md
-```
-
-
 
