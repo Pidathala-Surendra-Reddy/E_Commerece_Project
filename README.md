@@ -56,10 +56,11 @@ The main goals of this project are:
  - Helps in monitoring changes and maintaining security.
    
 # 🛠️ Tech Stack
-• Backend Framework: FastAPI
-• ORM & Database: SQLAlchemy & PostgreSQL
-• Authentication: JWT (JSON Web Tokens)
-• Password Security: bcrypt (via Passlib)
-• Environment Management: python-dotenv
-• Documentation: Swagger UI (auto-generated)
+- Backend Framework: FastAPI
+- ORM & Database: SQLAlchemy & PostgreSQL
+- Authentication: JWT (JSON Web Tokens)
+- Password Security: bcrypt (via Passlib)
+- Environment Management: python-dotenv
+- Documentation: Swagger UI (auto-generated)
+
 
