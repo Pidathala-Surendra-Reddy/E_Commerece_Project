@@ -7,6 +7,13 @@
  - Write reviews and manage wishlists
 • Admins can manage products, categories, inventory, and monitor user activities. The project is designed with JWT-based authentication, secure endpoints, and a scalable relational database schema.
 
+## ER Diagram
+
+The following diagram represents the entities and relationships in the e-commerce project:
+
+![ER Diagram](app/__pycache__/e_commerce_fast_api.png)
+
+
 # 🎯 Objectives
 The main goals of this project are:
 1. Design a normalized ER diagram for an e-commerce system.
@@ -55,3 +62,4 @@ The main goals of this project are:
 • Password Security: bcrypt (via Passlib)
 • Environment Management: python-dotenv
 • Documentation: Swagger UI (auto-generated)
+
