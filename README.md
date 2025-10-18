@@ -1,100 +1,57 @@
-# 🛒 E-Commerce Platform
- # 📌 Overview
-• This project is a complete E-Commerce Platform backend built with FastAPI, SQLAlchemy, and PostgreSQL. It supports:
-• User registration, authentication, and profile management
-• Product management and browsing
-• Shopping cart, orders, and payments
-• Reviews, wishlists, and coupons
-• Admin and inventory management
-• JWT-based authentication for secure endpoints
-• The backend is designed to be scalable, secure, and ready for production, with a normalized relational database schema.
+# 🛒 E-Commerce Platform Backend
+# 📌 Project Overview
+• This project is a full-fledged E-Commerce backend built with FastAPI, SQLAlchemy, and PostgreSQL. It simulates a real-world online shopping platform where users can:
+ - Browse products by categories
+ - Add products to cart and place orders
+ - Make payments and track shipping
+ - Write reviews and manage wishlists
+• Admins can manage products, categories, inventory, and monitor user activities. The project is designed with JWT-based authentication, secure endpoints, and a scalable relational database schema.
 
-# 🎯 Objective
-• The goal of this project is to:
-• Design a fully-functional ER diagram for an e-commerce system.
-• Implement a FastAPI backend using SQLAlchemy ORM.
-• Demonstrate JWT-based authentication for users and admins.
-• Provide RESTful APIs for all major e-commerce operations.
-• Ensure data integrity, relationships, and cascading actions.
+# 🎯 Objectives
+The main goals of this project are:
+1. Design a normalized ER diagram for an e-commerce system.
+2. Build a RESTful API backend using FastAPI and SQLAlchemy.
+3. Implement secure authentication for users and admins.
+4. Track orders, payments, and shipping efficiently.
+5. Ensure data consistency and audit logging.
 
-
-# 🏗️ Project Structure
-e-commerce/
-│
-├─ app/
-│  ├─ main.py              # FastAPI app initialization
-│  ├─ models.py            # SQLAlchemy ORM models
-│  ├─ database.py          # Database setup (PostgreSQL)
-│  ├─ auth_utils.py        # Password hashing and JWT token utils
-│  ├─ dependencies.py      # Current user/admin dependency functions
-│  ├─ schemas.py           # Pydantic schemas for request/response validation
-│  └─ routers/
-│      ├─ users.py
-│      ├─ admin.py
-│      ├─ products.py
-│      ├─ categories.py
-│      ├─ inventory.py
-│      ├─ cart.py
-│      ├─ orders.py
-│      ├─ payments.py
-│      ├─ shipping.py
-│      ├─ reviews.py
-│      ├─ coupons.py
-│      └─ wishlist.py
-│
-├─ .env                    # Environment variables (DB URL, JWT secret)
-├─ requirements.txt        # Python dependencies
-└─ README.md
-
-# ⚡ Key Features
-1. Authentication & Authorization:
-  • JWT-based login for Users and Admins
-  • Protected routes with get_current_user and get_current_admin dependencies
-2. Product & Category Management:
-   • Admins can create, update, delete categories and products
-   • Products linked to categories for filtering
-3. Shopping Cart & Orders:
-   • Users can add products to cart
-   • Place orders and generate order items automatically
-   • Apply coupons and calculate total amounts
-4. Payment & Shipping:
-   • One-to-one relationship with each order
-   • Track shipping status and estimated delivery
-5. Reviews & Wishlist:
-   • Users can review products
-   • Add products to wishlist for later purchase
-6. Inventory & Audit Logs
-   • Track product stock and location
-   • Log all actions performed by users and admins
+# 🧩 How It Works
+# 1. Users
+ - Users can register, login, and manage their profile.
+ - Add products to cart or wishlist.
+ - Place orders and apply coupons for discounts.
+ - Review products they purchased.
+# 2. Admins
+ - Create, update, and delete products and categories.
+ - Manage inventory and stock.
+ - View logs of user/admin actions for auditing.
+# 3. Products & Categories
+ - Products are linked to categories for easy browsing.
+ - Each product has details like price, stock, description, and brand.
+ - Inventory tracks product quantity and location.
+# 4. Cart & Orders
+ - Users can add multiple items to the cart.
+ - When an order is placed:
+ - Order items are created automatically
+ - Payment and shipping entries are generated
+ - One order → One payment and One shipping (1:1 relationship)
+# 5. Payments & Shipping
+ - Payment status is tracked (pending, completed, failed).
+ - Shipping info includes courier, tracking number, and delivery status.
+# 6. Reviews & Wishlist
+ - Users can post reviews for products with rating and comments.
+ - Wishlist allows users to save products for later purchase.
+# 7. Coupons & Discounts
+ - Admins can create coupons with percentage discounts and validity period.
+ - Orders can apply coupons if they meet the minimum amount.
+# 8. Audit Logs
+ - Tracks all actions performed by users and admins.
+ - Helps in monitoring changes and maintaining security.
    
 # 🛠️ Tech Stack
-
 • Backend Framework: FastAPI
-• ORM & Database: SQLAlchemy & PostgreSQL
-• Authentication: JWT (JSON Web Tokens)
+• ORM & Database: SQLAlchemy & PostgreSQL
+• Authentication: JWT (JSON Web Tokens)
 • Password Security: bcrypt (via Passlib)
 • Environment Management: python-dotenv
-• Documentation: Swagger UI (auto-generated)
-
-# ⚙️ Setup Instructions
-
-# 1. Clone the repository:
- - git clone https://github.com/Pidathala-Surendra-Reddy/E_Commerece_Project.git
- - cd E_Commerece_Project
-# 2. Create a virtual environment:
- - python -m venv venv
- - source venv/bin/activate  # Linux/Mac
- - venv\Scripts\activate     # Windows
-# 3. Install dependencies:
- - pip install -r requirements.txt
-# 4. Configure .env with:
- - DATABASE_URL=postgresql://username:password@localhost/dbname
- - JWT_SECRET_KEY=your_secret_key
- - JWT_ALGORITHM=HS256
-# 5. Run the FastAPI server:
- - uvicorn app.main:app --reload
-# 6. Access Swagger docs at:
-http://127.0.0.1:8000/docs
-
-📈 ER Diagram
-A visual ER diagram representing all tables, relationships, PKs, and FKs should be included in /docs/ER_Diagram.png or exported from tools like dbdiagram.io, draw.io, or Lucidchart.
+• Documentation: Swagger UI (auto-generated)
