@@ -43,10 +43,34 @@ The following diagram represents the entities and relationships in the e-commerc
 ![ER Diagram](app/__pycache__/e_commerce_fast_api.png)
 
 The database is designed to include all essential entities and relationships:
+1. Users & Admins
+2. Products & Categories
+3. Inventory
+4. Cart & Cart Items
+5. Orders & Order Items
+6. Payments
+7. Shipping
+8. Reviews
+9. Coupons
+10. Wishlist
+11. Audit Log
+
+Relationships:
 1. One-to-Many: Category → Products, User → Orders, Order → OrderItems
 2. Many-to-Many: Users ↔ Products via CartItems & OrderItems
 3. One-to-One: Order → Payment, Order → Shipping
 
+# 🌟 Features
+1. User & Admin Authentication: Secure JWT-based login and registration.
+2. Product Management: Add, update, view, and categorize products.
+3. Inventory Management: Track stock and product locations.
+4. Cart & Wishlist: Users can manage their shopping cart and wishlist.
+5. Orders & Payments: Place orders, process payments, and track shipments.
+6. Reviews & Ratings: Users can submit reviews for purchased products.
+7. Coupons & Discounts: Apply discount codes for orders.
+8. Audit Logging: Track user and admin actions in the system.
+9. Scalable & Modular: Clean code structure for easy feature expansion.
+    
 # 🎯 Objectives
 The main goals of this project are:
 1. Design a normalized ER diagram for an e-commerce system.
@@ -88,11 +112,13 @@ The main goals of this project are:
  - Tracks all actions performed by users and admins.
  - Helps in monitoring changes and maintaining security.
    
-# 🛠️ Tech Stack
+# 🛠️⚙️ Technologies & Tools
 - Backend Framework: FastAPI
-- ORM & Database: SQLAlchemy & PostgreSQL
-- Authentication: JWT (JSON Web Tokens)
+- ORM : SQLAlchemy
+- Database: PostgreSQL
+- Authentication: JWT+ OAuth2 (JSON Web Tokens)
 - Password Security: bcrypt (via Passlib)
 - Environment Management: python-dotenv
 - Documentation: Swagger UI (auto-generated)
+- ER Diagram: draw.io / diagrams.net
 
