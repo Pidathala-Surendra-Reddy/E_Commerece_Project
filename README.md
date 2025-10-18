@@ -7,12 +7,16 @@
  - Write reviews and manage wishlists
 • Admins can manage products, categories, inventory, and monitor user activities. The project is designed with JWT-based authentication, secure endpoints, and a scalable relational database schema.
 
-## ER Diagram
+# 🔗 ER Diagram
 
 The following diagram represents the entities and relationships in the e-commerce project:
 
 ![ER Diagram](app/__pycache__/e_commerce_fast_api.png)
 
+The database is designed to include all essential entities and relationships:
+1. One-to-Many: Category → Products, User → Orders, Order → OrderItems
+2. Many-to-Many: Users ↔ Products via CartItems & OrderItems
+3. One-to-One: Order → Payment, Order → Shipping
 
 # 🎯 Objectives
 The main goals of this project are:
@@ -62,5 +66,34 @@ The main goals of this project are:
 - Password Security: bcrypt (via Passlib)
 - Environment Management: python-dotenv
 - Documentation: Swagger UI (auto-generated)
+
+# Project Structure:
+
+e-commerce/
+│
+├─ app/
+│  ├─ main.py              # FastAPI app initialization
+│  ├─ models.py            # SQLAlchemy models
+│  ├─ database.py          # PostgreSQL connection & session
+│  ├─ auth_utils.py        # JWT token creation & password hashing
+│  ├─ dependencies.py      # Current user/admin dependency
+│  ├─ schemas.py           # Request & Response validation
+│  └─ routers/             # API endpoints per entity
+│      ├─ users.py
+│      ├─ admin.py
+│      ├─ products.py
+│      ├─ categories.py
+│      ├─ inventory.py
+│      ├─ cart.py
+│      ├─ orders.py
+│      ├─ payments.py
+│      ├─ shipping.py
+│      ├─ reviews.py
+│      ├─ coupons.py
+│      └─ wishlist.py
+├─ .env                    # Environment variables
+├─ requirements.txt        # Python dependencies
+└─ README.md
+
 
 
