@@ -68,6 +68,7 @@ The main goals of this project are:
 - Documentation: Swagger UI (auto-generated)
 
 # Project Structure:
+```
 
 e-commerce/
 │
@@ -94,6 +95,7 @@ e-commerce/
 ├─ .env                    # Environment variables
 ├─ requirements.txt        # Python dependencies
 └─ README.md
+```
 
 
 
